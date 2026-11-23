@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- basic setup -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumbhani Janvi | Web Developer Portfolio (HTML, CSS, JS, PHP)</title>
+<!-- seo meta tags (title, description, keywords, author) -->
+<meta name="description" content="Portfolio of Lumbhani Janvi, BCA student and web developer at Webcare Infoway. HTML, CSS, JavaScript, Bootstrap and PHP projects, skills and contact details.">
+<meta name="keywords" content="Lumbhani Janvi, web developer, portfolio, HTML, CSS, JavaScript, Bootstrap, PHP, BCA student, Webcare Infoway, Oasis Infobyte">
+<meta name="author" content="Lumbhani Janvi">
+<meta name="theme-color" content="#0c0f1d">
+<!-- favicon and app icons -->
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- social media preview (open graph and twitter) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lumbhani Janvi | Web Developer Portfolio">
+<meta property="og:description" content="BCA student and web developer working with HTML, CSS, JavaScript, Bootstrap and PHP.">
+<meta property="og:image" content="assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- google fonts (jetbrains mono and space grotesk) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- set the saved theme before page loads so there is no flash -->
+<script>document.documentElement.classList.add('js');try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+<!-- main stylesheet -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- loading screen (oasis infobyte task 2, level 1) -->
+<div id="boot">
+  <div class="boot-card">
+    <img src="assets/logo.svg" alt="Janvi logo" width="64" height="64">
+    <h2>Oasis Infobyte</h2>
+    <p class="b-task">Task 2, Level 1</p>
+    <p class="b-title">Personal Portfolio</p>
+    <pre id="bootLog"></pre>
+    <div class="b-bar"><span></span></div>
+    <p class="b-by">Built by Lumbhani Janvi with HTML5, CSS3 and JavaScript</p>
+    <button class="b-skip" type="button">Skip</button>
+  </div>
+</div>
+<!-- top progress bar, mouse glow and animated background canvas -->
+<div class="topbar" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<!-- navbar -->
+<header class="nav">
+  <a href="#home" class="logo"><img src="assets/logo.svg" alt="" width="34" height="34"><span>CodeWithJanvi</span></a>
+  <nav>
+    <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#services">Services</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+  </nav>
+  <button class="theme-btn" aria-label="Switch colour theme" title="Switch theme">
+    <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+    <svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z"/></svg>
+  </button>
+  <button class="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<!-- main content -->
+<main>
+<!-- home / hero section -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <!-- intro text with typing animation -->
+    <p class="whoami"><b>janvi@portfolio:~$</b> <span>whoami</span></p>
+    <p class="hello">Hi, I'm</p>
+    <h1>Lumbhani Janvi</h1>
+    <h2>I build <span id="typed"></span><span class="caret">|</span></h2>
+    <p class="lead">BCA student and web developer at Webcare Infoway. I turn ideas into fast, responsive and accessible websites.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">View my work</a>
+      <a class="btn" href="#contact">Hire me</a>
+    </div>
+  </div>
+  <!-- code editor card -->
+  <div class="editor" aria-label="Code editor showing developer profile">
+    <div class="bar"><i></i><i></i><i></i><span>developer.js</span></div>
+    <pre><code id="code"></code></pre>
+  </div>
+</section>
+
+<!-- tech stack ticker -->
+<div class="marquee" aria-hidden="true"><div class="track"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap</span><span>PHP</span><span>Responsive design</span><span>Clean code</span><span>Animation</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap</span><span>PHP</span><span>Responsive design</span><span>Clean code</span><span>Animation</span></div></div>
+
+<!-- about section -->
+<section id="about">
+  <h2 class="title">About me</h2>
+  <div class="about reveal">
+    <div class="ring"><img src="assets/janvi.jpg" alt="Portrait of Lumbhani Janvi" class="avatar" width="200" height="200"></div>
+    <div>
+      <p>I'm Janvi, a BCA student and a web developer at Webcare Infoway. I build websites with HTML, CSS, JavaScript, Bootstrap and PHP.</p>
+      <p>I enjoy turning designs into clean pages that feel good on every screen, and I like adding small animations that make a site feel alive.</p>
+      <p>I'm always learning, one real project at a time.</p>
+      <ul class="facts"><li><b>BCA</b> student</li><li><b>Webcare</b> Infoway</li><li><b>5</b> core skills</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- skills section (percent bar animates when visible) -->
+<section id="skills">
+  <h2 class="title">Skills</h2>
+  <div class="grid skills">
+    <!-- html5 skill -->
+    <div class="skill reveal" data-level="95">
+      <svg viewBox="0 0 24 24"><path d="M4 3l1.6 17L12 22l6.4-2L20 3zm12.2 5H9l.2 2h6.8l-.6 6-3.4 1-3.4-1-.2-2.5h2l.1 1.2 1.5.4 1.5-.4.2-2H8.4L8 6h8.4z"/></svg>
+      <h3>HTML5</h3>
+      <div class="meter"><span></span></div>
+    </div>
+    <!-- css3 skill -->
+    <div class="skill reveal" data-level="90">
+      <svg viewBox="0 0 24 24"><path d="M4 3l1.6 17L12 22l6.4-2L20 3zm11.9 5H9.2l.2 2h6.3l-.5 5.6-3.2 1-3.2-1-.2-2.3h2l.1 1.2 1.3.4 1.4-.4.1-1.6H8.3L7.9 6h8.2z"/></svg>
+      <h3>CSS3</h3>
+      <div class="meter"><span></span></div>
+    </div>
+    <!-- javascript skill -->
+    <div class="skill reveal" data-level="85">
+      <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zm10 14.5c.5.9 1.3 1.5 2.7 1.5 1.4 0 2.3-.7 2.3-1.7 0-1.2-.9-1.6-2.5-2.3l-.8-.4c-1.6-.7-2.6-1.5-2.6-3.2 0-1.6 1.2-2.8 3.1-2.8 1.3 0 2.3.5 3 1.7l-1.6 1c-.4-.7-.7-1-1.4-1-.6 0-1 .4-1 1 0 .7.4 1 1.3 1.4l.8.3c1.9.8 2.9 1.6 2.9 3.4 0 2-1.5 3.1-3.6 3.1-2 0-3.3-1-3.9-2.2zm-5.1.2c.4.7.7 1.2 1.5 1.2.8 0 1.3-.3 1.3-1.5V10h2v7.7c0 2.5-1.5 3.6-3.6 3.6-1.9 0-3-1-3.6-2.2z"/></svg>
+      <h3>JavaScript</h3>
+      <div class="meter"><span></span></div>
+    </div>
+    <!-- bootstrap skill -->
+    <div class="skill reveal" data-level="85">
+      <svg viewBox="0 0 24 24"><path d="M6 3h8a4 4 0 012.6 7A4.2 4.2 0 0114.5 21H6zm3 3v4h4.5a2 2 0 000-4zm0 7v5h5a2.5 2.5 0 000-5z"/></svg>
+      <h3>Bootstrap</h3>
+      <div class="meter"><span></span></div>
+    </div>
+    <!-- php skill -->
+    <div class="skill reveal" data-level="75">
+      <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="11" ry="6.5"/><text x="12" y="14.8" text-anchor="middle" font-size="7.5" font-weight="700" font-family="sans-serif" style="fill:var(--bg)">php</text></svg>
+      <h3>PHP</h3>
+      <div class="meter"><span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- services section -->
+<section id="services">
+  <h2 class="title">What I do</h2>
+  <div class="grid services">
+    <!-- service 1 -->
+    <div class="svc reveal">
+      <span class="ico">&lt;/&gt;</span>
+      <h3>Responsive websites</h3>
+      <p>Clean HTML and CSS layouts that look right on phones, tablets and desktops.</p>
+    </div>
+    <!-- service 2 -->
+    <div class="svc reveal">
+      <span class="ico">&lt;?php</span>
+      <h3>PHP development</h3>
+      <p>Dynamic pages and forms built with PHP, ready to connect to a database.</p>
+    </div>
+    <!-- service 3 -->
+    <div class="svc reveal">
+      <span class="ico">{ }</span>
+      <h3>Bootstrap UI</h3>
+      <p>Fast, consistent interfaces using Bootstrap components and grid.</p>
+    </div>
+    <!-- service 4 -->
+    <div class="svc reveal">
+      <span class="ico">~</span>
+      <h3>Animation and motion</h3>
+      <p>Small JavaScript and CSS animations that guide the eye without slowing the page.</p>
+    </div>
+  </div>
+</section>
+
+<!-- journey section (work and education timeline) -->
+<section id="journey">
+  <h2 class="title">Journey</h2>
+  <ol class="timeline">
+    <!-- work -->
+    <li class="reveal">
+      <span class="when">Now</span>
+      <h3>Web Developer, Webcare Infoway</h3>
+      <p>Building and maintaining websites with HTML, CSS, JavaScript, Bootstrap and PHP.</p>
+    </li>
+    <!-- education -->
+    <li class="reveal">
+      <span class="when">Now</span>
+      <h3>BCA student</h3>
+      <p>Studying Bachelor of Computer Applications while working in the industry.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- projects section (replace with your own projects) -->
+<section id="projects">
+  <h2 class="title">Projects</h2>
+  <div class="grid cards">
+    <!-- project card 1 -->
+    <article class="card reveal">
+      <div class="thumb t1"><code>{ }</code></div>
+      <h3>Lusso Cafe Website</h3>
+      <p>A short description of what this project does, who it is for and the problem it solves.</p>
+      <p class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></p>
+      <a class="link" href="https://github.com/CodeWithJanvi/lusso-cafe" target="_blank" rel="noopener">GitHub repository</a>
+    </article>
+    <!-- project card 2 -->
+    <article class="card reveal">
+      <div class="thumb t2"><code>&lt;/&gt;</code></div>
+      <h3>Rakhi Special Website</h3>
+      <p>A beautiful Raksha Bandhan special website created to express love and appreciation for my brother, featuring a heartfelt design, animations, music, and memorable sibling moments. ❤️🎀</p>
+      <p class="tags"><span>Bootstrap</span><span>JavaScript</span></p>
+      <a class="link" href="https://github.com/CodeWithJanvi/Rakhi-Special-Website" target="_blank" rel="noopener">GitHub repository</a>
+    </article>
+    <!-- project card 3 -->
+    <article class="card reveal">
+      <div class="thumb t3"><code>( )</code></div>
+      <h3>HexSoftware Music Player Website</h3>
+      <p>HexaMusic is a responsive, modern, and lightweight music player website built with HTML, CSS, and JavaScript. It allows users to play songs, skip to next or previous tracks, and control playback seamlessly.</p>
+      <p class="tags"><span>Html</span><span>CSS</span><span>JS</span><span>Bootstrap</span></p>
+      <a class="link" href="https://github.com/CodeWithJanvi/HexSoftware-Music-Player-Website" target="_blank" rel="noopener">GitHub repository</a>
+    </article>
+  </div>
+</section>
+
+<!-- contact section -->
+<section id="contact">
+  <h2 class="title">Contact</h2>
+  <p class="intro reveal">Have a project in mind or want to say hello? Pick a channel or send a message below.</p>
+  <div class="contact-wrap">
+    <!-- contact links (email opens gmail) -->
+    <div class="links">
+      <a class="clink reveal" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=lumbhanijanvi59@gmail.com" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" class="st"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        <span><b>Email</b>lumbhanijanvi59@gmail.com</span>
+      </a>
+      <a class="clink reveal" href="https://github.com/codeWithJanvi" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.8V21c0 .3.2.6.7.5A10 10 0 0012 2z"/></svg>
+        <span><b>GitHub</b>codeWithJanvi</span>
+      </a>
+      <a class="clink reveal" href="https://www.linkedin.com/in/janvi-lumbhani-1580ab2a9/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M4 3a2 2 0 100 4 2 2 0 000-4zM2 9h4v12H2zm7 0h4v1.7c.6-1 1.9-2 3.8-2 4 0 4.2 2.6 4.2 5.4V21h-4v-6c0-1.4 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>
+        <span><b>LinkedIn</b>Janvi Lumbhani</span>
+      </a>
+      <a class="clink reveal" href="https://www.instagram.com/iamjanvi_01_001/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" class="st"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></svg>
+        <span><b>Instagram</b>@iamjanvi_01_001</span>
+      </a>
+      <div class="copyrow reveal"><code id="mailText">lumbhanijanvi59@gmail.com</code><button type="button" id="copyMail" class="btn">Copy email</button></div>
+    </div>
+    <!-- message form (web3forms or gmail fallback) -->
+    <form class="form reveal" id="mailForm">
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Your email<input name="email" type="email" required autocomplete="email"></label>
+      <label>Message<textarea name="msg" rows="5" required></textarea></label>
+      <input type="checkbox" name="botcheck" hidden tabindex="-1" autocomplete="off">
+      <button class="btn primary" type="submit">Send message</button>
+      <p class="note" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- footer -->
+<footer class="foot">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#home" class="logo"><img src="assets/logo.svg" alt="" width="34" height="34"><span>CodeWithJanvi</span></a>
+      <p>BCA student and web developer at Webcare Infoway. Building the web one commit at a time.</p>
+      <p class="status"><i></i>Currently coding</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#services">Services</a></li><li><a href="#journey">Journey</a></li><li><a href="#projects">Projects</a></li></ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul><li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=lumbhanijanvi59@gmail.com" target="_blank" rel="noopener">Email</a></li><li><a href="https://github.com/codeWithJanvi" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.linkedin.com/in/janvi-lumbhani-1580ab2a9/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/iamjanvi_01_001/" target="_blank" rel="noopener">Instagram</a></li></ul>
+    </div>
+    <div class="term" aria-label="Terminal animation">
+      <div class="bar"><i></i><i></i><i></i><span>bash</span></div>
+      <pre id="termOut"></pre>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; <span id="year"></span> Lumbhani Janvi. Built with HTML, CSS and JavaScript.</span>
+    <span class="task">Oasis Infobyte, Task 2 (Level 1)</span>
+    <span class="clock">Local time <b id="clock">--:--:--</b></span>
+    <a href="#home" class="totop">Back to top</a>
+  </div>
+</footer>
+
+<!-- scroll progress circle (right side) -->
+<button class="scroll-ring" aria-label="Scroll progress, click to go to top" title="Back to top">
+  <svg viewBox="0 0 48 48"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--violet)"/><stop offset="1" style="stop-color:var(--cyan)"/></linearGradient></defs><circle class="trk" cx="24" cy="24" r="21"/><circle class="bar2" cx="24" cy="24" r="21" pathLength="100"/></svg>
+  <span>0%</span>
+</button>
+<!-- javascript -->
+<script src="js/main.js"></script>
+</body>
+</html>

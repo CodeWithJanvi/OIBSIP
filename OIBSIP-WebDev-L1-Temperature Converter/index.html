@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Thermo | Temperature Converter</title>
+
+  <!-- SEO / sharing -->
+  <meta name="description" content="Thermo is a fast temperature converter. Convert Celsius, Fahrenheit and Kelvin instantly with real-time validation.">
+  <meta name="keywords" content="temperature converter, celsius to fahrenheit, kelvin, javascript, oasis infobyte">
+  <meta name="author" content="Janvi Lumbhani">
+  <meta name="theme-color" content="#080c1a">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thermo | Temperature Converter">
+  <meta property="og:description" content="Convert Celsius, Fahrenheit and Kelvin instantly.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Apply saved / system theme before first paint (prevents a flash) -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      var theme = null;
+      try { theme = localStorage.getItem("thermo-theme"); } catch (e) {}
+      if (theme !== "light" && theme !== "dark") {
+        theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      }
+      root.dataset.theme = theme;
+      root.dataset.mood = "mild";
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <noscript><style>.loader { display: none !important; } .js .reveal, .js .card { opacity: 1 !important; }</style></noscript>
+</head>
+<body>
+
+  <!-- Loader screen -->
+  <div id="loader" class="loader" role="status" aria-live="polite" aria-label="Loading">
+    <div class="loader-inner">
+      <div class="l-chip"><span class="l-dot" aria-hidden="true"></span>TASK 3</div>
+
+      <div class="l-thermo" aria-hidden="true">
+        <div class="l-tube"><div class="l-mercury"></div></div>
+        <div class="l-bulb"></div>
+      </div>
+
+      <h2 class="l-title" aria-label="Thermo">
+        <span style="--i:0">T</span><span style="--i:1">h</span><span style="--i:2">e</span><span style="--i:3">r</span><span style="--i:4">m</span><span style="--i:5">o</span>
+      </h2>
+      <p class="l-task">Task 3 &middot; Temperature Converter</p>
+      <p class="l-status" id="l-status">Calibrating sensors…</p>
+      <div class="l-bar" aria-hidden="true"><span id="l-bar-fill"></span></div>
+      <span class="l-percent" id="l-percent">0%</span>
+      <p class="l-credit">Oasis Infobyte &middot; Web Development Internship &middot; Level 1</p>
+    </div>
+  </div>
+
+  <!-- Scroll progress + animated background -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="grid-lines"></span>
+  </div>
+
+  <!-- Theme switch -->
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2"/>
+      <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M5.3 18.7L7 17M17 7l1.7-1.7"/>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.6 8.6 0 1 0 10.7 10.7z"/>
+    </svg>
+  </button>
+
+  <div class="page">
+
+    <section class="hero">
+      <main class="card" id="card">
+        <header>
+          <span class="badge">Task 3</span>
+          <h1>Temperature Converter</h1>
+          <p class="subtitle">Type a value, pick a unit, see all three.</p>
+        </header>
+
+        <div class="form-row">
+        <div class="field">
+          <label for="temp-input">Temperature value</label>
+          <input type="text" id="temp-input" inputmode="decimal" placeholder="25" autocomplete="off" aria-describedby="error-msg">
+        </div>
+
+        <fieldset class="units">
+          <legend>Convert from</legend>
+          <div class="segmented">
+            <span class="slider" aria-hidden="true"></span>
+            <input type="radio" name="unit" id="u-c" value="C" checked>
+            <label for="u-c">°C <small>Celsius</small></label>
+            <input type="radio" name="unit" id="u-f" value="F">
+            <label for="u-f">°F <small>Fahrenheit</small></label>
+            <input type="radio" name="unit" id="u-k" value="K">
+            <label for="u-k">K <small>Kelvin</small></label>
+          </div>
+        </fieldset>
+        </div>
+
+        <div class="quick" aria-label="Quick picks">
+          <span class="quick-label">Quick picks</span>
+          <div class="chips">
+            <button type="button" class="chip" data-v="0" data-u="C">Freezing</button>
+            <button type="button" class="chip" data-v="25" data-u="C">Room</button>
+            <button type="button" class="chip" data-v="37" data-u="C">Body</button>
+            <button type="button" class="chip" data-v="100" data-u="C">Boiling</button>
+            <button type="button" class="chip" data-v="0" data-u="K">Abs. zero</button>
+          </div>
+        </div>
+
+        <p id="error-msg" class="error" role="alert" hidden></p>
+
+        <button id="convert-btn" class="btn-primary" type="button"><span>Convert</span></button>
+
+        <section id="result" class="result" aria-live="polite" hidden>
+          <div class="thermo" aria-hidden="true">
+            <div class="tube"><div id="gauge-fill" class="mercury"></div></div>
+            <div class="bulb"></div>
+          </div>
+          <div class="result-main">
+            <!-- NEW: temperature category (colour follows it) -->
+            <div class="mood-chip" id="mood-chip">
+              <span class="mood-dot" aria-hidden="true"></span>
+              <span><b id="mood-label">Mild</b><small id="mood-note">15 to 25 °C</small></span>
+            </div>
+            <ul class="tiles">
+              <li data-unit="C" tabindex="0" title="Click to copy"><span class="unit-name">Celsius</span><strong><span id="out-c">–</span><em>°C</em></strong></li>
+              <li data-unit="F" tabindex="0" title="Click to copy"><span class="unit-name">Fahrenheit</span><strong><span id="out-f">–</span><em>°F</em></strong></li>
+              <li data-unit="K" tabindex="0" title="Click to copy"><span class="unit-name">Kelvin</span><strong><span id="out-k">–</span><em>K</em></strong></li>
+            </ul>
+          </div>
+        </section>
+
+        <p class="hint" id="copy-hint" hidden>Tip: click a result to copy it.</p>
+
+        <footer class="foot">Web Development Internship, Level 1 Task 3 &nbsp;|&nbsp; Oasis Infobyte</footer>
+      </main>
+
+      <a class="scroll-cue" href="#history" aria-label="Scroll to more sections">
+        <span>Scroll</span>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <section class="panel reveal" id="history" aria-labelledby="history-title">
+      <div class="panel-head">
+        <h2 id="history-title">Recent conversions</h2>
+        <button type="button" id="clear-history" class="link-btn" hidden>Clear</button>
+      </div>
+      <ul id="history-list" class="history"></ul>
+      <p id="history-empty" class="empty">Nothing yet. Convert a temperature and it will show up here.</p>
+    </section>
+
+    <!-- NEW: temperature categories (click one to try it) -->
+    <section class="panel reveal" id="categories" aria-labelledby="cats-title">
+      <div class="panel-head"><h2 id="cats-title">Temperature categories</h2></div>
+      <div class="cats" id="cats"></div>
+    </section>
+
+    <section class="panel reveal" id="formulas" aria-labelledby="formulas-title">
+      <div class="panel-head"><h2 id="formulas-title">Formulas used</h2></div>
+      <div class="formulas">
+        <article class="formula" style="--d:0"><span>Celsius to Fahrenheit</span><code>F = C × 9/5 + 32</code></article>
+        <article class="formula" style="--d:1"><span>Fahrenheit to Celsius</span><code>C = (F − 32) × 5/9</code></article>
+        <article class="formula" style="--d:2"><span>Celsius to Kelvin</span><code>K = C + 273.15</code></article>
+        <article class="formula" style="--d:3"><span>Kelvin to Celsius</span><code>C = K − 273.15</code></article>
+      </div>
+    </section>
+
+    <section class="panel reveal" id="facts" aria-labelledby="facts-title">
+      <div class="panel-head"><h2 id="facts-title">Good to know</h2></div>
+      <div class="facts">
+        <div class="fact" style="--d:0"><strong>0 °C</strong><span>Water freezes<br>32 °F · 273.15 K</span></div>
+        <div class="fact" style="--d:1"><strong>37 °C</strong><span>Human body<br>98.6 °F · 310.15 K</span></div>
+        <div class="fact" style="--d:2"><strong>100 °C</strong><span>Water boils<br>212 °F · 373.15 K</span></div>
+        <div class="fact" style="--d:3"><strong>0 K</strong><span>Absolute zero<br>−273.15 °C · −459.67 °F</span></div>
+      </div>
+    </section>
+
+    <footer class="site-foot reveal">
+      Thermo &middot; Task 3 &middot; Oasis Infobyte Web Development Internship
+    </footer>
+  </div>
+
+  <button id="to-top" class="to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+  </button>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
