@@ -12,7 +12,6 @@
 This project is **Task 3, Level 1 (Temperature Converter)** of my **Oasis Infobyte (OIBSIP) Web Development Internship**.
 
 🔗 **Live Demo:** [https://temperatureconverter-sigma.vercel.app](https://temperatureconverter-sigma.vercel.app/)
-📂 **Repository:** [CodeWithJanvi/OIBSIP](https://github.com/CodeWithJanvi/OIBSIP)
 
 ---
 
