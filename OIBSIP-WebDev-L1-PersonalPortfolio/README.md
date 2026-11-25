@@ -4,13 +4,14 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Responsive](https://img.shields.io/badge/Responsive-Yes-success?style=for-the-badge)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://personalporfoliowebsite-six.vercel.app/)
 ![Oasis Infobyte](https://img.shields.io/badge/Oasis%20Infobyte-Task%202%20(Level%201)-blueviolet?style=for-the-badge)
 
 A modern, responsive and animated **personal portfolio website** with a developer-style (terminal and code editor) theme. Built with pure **HTML5, CSS3 and JavaScript** and no frameworks or build tools.
 
 This project is **Task 2, Level 1 (Personal Portfolio)** of my **Oasis Infobyte (OIBSIP) Web Development Internship**.
 
-🔗 **Live Demo:** `https://your-site-link-here`
+🔗 **Live Demo:** [https://personalporfoliowebsite-six.vercel.app](https://personalporfoliowebsite-six.vercel.app/)
 📂 **Repository:** [CodeWithJanvi/OIBSIP](https://github.com/CodeWithJanvi/OIBSIP)
 
 ---
