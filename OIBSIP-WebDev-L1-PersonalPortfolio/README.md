@@ -17,15 +17,37 @@ This project is **Task 2, Level 1 (Personal Portfolio)** of my **Oasis Infobyte 
 
 ## 📸 Screenshots
 
-| Home | Skills |
-|------|--------|
-| ![Home](ScreenShots/home.png) | ![Skills](ScreenShots/skills.png) |
+### 🌙 Dark Theme
 
-| Projects | Contact |
-|----------|---------|
-| ![Projects](ScreenShots/projects.png) | ![Contact](ScreenShots/contact.png) |
+| Home | About |
+|------|-------|
+| ![Home](ScreenShots/Dark%20Theme/home%20Screen.png) | ![About](ScreenShots/Dark%20Theme/About%20Screen.png) |
 
-> Add your own images to the `ScreenShots/` folder and update the file names above.
+| Skills | Services |
+|--------|----------|
+| ![Skills](ScreenShots/Dark%20Theme/Skill%20Screen.png) | ![Services](ScreenShots/Dark%20Theme/Skill%20Screen1.png) |
+
+| Journey | Projects |
+|---------|----------|
+| ![Journey](ScreenShots/Dark%20Theme/Journey%20Screen.png) | ![Projects](ScreenShots/Dark%20Theme/Project%20Screen.png) |
+
+| Contact | Footer |
+|---------|--------|
+| ![Contact](ScreenShots/Dark%20Theme/Contact%20Screen.png) | ![Footer](ScreenShots/Dark%20Theme/Footer%20Screen.png) |
+
+### 📱 Responsive Design (Laptop, Tablet and Mobile)
+
+![Responsive Showcase](ScreenShots/Dark%20Theme/responsive-showcase-dark.png)
+
+### ☀️ Light Theme
+
+The site also has a **light theme**. Use the 🌙 / ☀️ button in the navbar to switch. Your choice is saved in the browser.
+
+<!-- Add light theme screenshots here after you upload them to ScreenShots/Light Theme/
+| Home (Light) | Projects (Light) |
+|--------------|------------------|
+| ![Home Light](ScreenShots/Light%20Theme/home%20Screen.png) | ![Projects Light](ScreenShots/Light%20Theme/Project%20Screen.png) |
+-->
 
 ---
 
