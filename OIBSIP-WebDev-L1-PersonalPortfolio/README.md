@@ -12,7 +12,7 @@ A modern, responsive and animated **personal portfolio website** with a develope
 This project is **Task 2, Level 1 (Personal Portfolio)** of my **Oasis Infobyte (OIBSIP) Web Development Internship**.
 
 🔗 **Live Demo:** [https://personalporfoliowebsite-six.vercel.app](https://personalporfoliowebsite-six.vercel.app/)
-📂 **Repository:** [CodeWithJanvi/OIBSIP](https://github.com/CodeWithJanvi/OIBSIP)
+
 
 ---
 
