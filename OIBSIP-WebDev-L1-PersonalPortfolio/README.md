@@ -12,7 +12,7 @@ A modern, responsive and animated **personal portfolio website** with a develope
 This project is **Task 2, Level 1 (Personal Portfolio)** of my **Oasis Infobyte (OIBSIP) Web Development Internship**.
 
 🔗 **Live Demo:** [https://personalporfoliowebsite-six.vercel.app](https://personalporfoliowebsite-six.vercel.app/)
-
+📂 **Repository:** [CodeWithJanvi/OIBSIP](https://github.com/CodeWithJanvi/OIBSIP)
 
 ---
 
@@ -192,6 +192,24 @@ You can host this site for free:
 ## 🙏 Acknowledgement
 
 Thanks to **Oasis Infobyte** for the internship opportunity and the task that inspired this project.
+
+---
+
+## 🔗 Live Preview
+
+<p align="center">
+  <a href="https://personalporfoliowebsite-six.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐_Visit_My_Portfolio-Live_Demo-7C5CFF?style=for-the-badge&logoColor=white" alt="Visit Lumbhani Janvi Portfolio Live Website">
+  </a>
+</p>
+
+<p align="center">
+  <b>Experience CodeWithJanvi — Developer Portfolio</b>
+  <br>
+  Explore my skills, services, journey and projects, switch between dark and light theme, and get in touch.
+  <br><br>
+  <a href="https://personalporfoliowebsite-six.vercel.app/">🌐 Open Live Website →</a>
+</p>
 
 ---
 
